@@ -13,7 +13,6 @@ public class JpaMain {
         //code
 
         try {
-            em.persist(Member.class);
 
             tx.commit();
         } catch (Exception e) {
