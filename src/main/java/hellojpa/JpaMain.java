@@ -13,6 +13,21 @@ public class JpaMain {
         //code
 
         try {
+            Team team = new Team();
+            team.setName("TeamA");
+//            team.getMembers().add(member);
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+
+
 
             tx.commit();
         } catch (Exception e) {
