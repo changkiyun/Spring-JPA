@@ -22,4 +22,10 @@ public class Order  {
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
+
+    public void addOrderItems(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+
+    }
 }
